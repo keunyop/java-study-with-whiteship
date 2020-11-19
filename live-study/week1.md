@@ -16,3 +16,15 @@ JVM을 해석을 거치기 때문에 c언어와 같은 네이티브 언어에 �
 OS에 종속적이지 않고 Java 파일 하나만 만들면 어느 디바이스든 JVM 위에서 실행할 수 있다.
 
 JVM은 크게 Class Loader, Runtime Data Areas, Excution Engine, Garbage Collector 4가지로 구성되어 있다.
+
+## 컴파일 하는 방법
+
+## 실행하는 방법
+
+## 바이트코드란 무엇인가
+
+## JIT 컴파일러란 무엇이며 어떻게 동작하는지
+
+## JVM 구성 요소
+
+## JDK와 JRE의 차이
