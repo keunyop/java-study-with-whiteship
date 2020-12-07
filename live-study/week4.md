@@ -43,7 +43,7 @@ if(a > 5) {
 		System.out.println("a가 10이상이면 코드 실행");
 	}
 }
-```s
+```
 
 
 
