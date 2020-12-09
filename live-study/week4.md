@@ -74,6 +74,59 @@ for문의 구조는 초기화, 조건식, 증감식, 블럭으로 이루어져 �
 
 3) 증감식
 
-반복문을 제어하는 변수의 값을 증가 또는 감소 시키는 것으로, 증감식으로 변수의 값이 변하다가 false가 될 경우 더이상 수행되지 않습니다.
+반복문을 제어하는 변수의 값을 증가 또는 감소 시키는 것으로, 증감식으로 변수의 값이 변하다가 false가 될 경우 더이상 수행되지 않는다.
 
-증감식도 ,(콤마)를 이용해서 두 문장 이상을 하나로 연결해서 쓸 수 있으며, 초기화, 조건식, 증감식 모두 생략 가능합니다.
+증감식도 ,(콤마)를 이용해서 두 문장 이상을 하나로 연결해서 쓸 수 있으며, 초기화, 조건식, 증감식 모두 생략 가능하다.
+
+
+### for ~ each문
+
+```
+//1 2 3 출력	
+public static void main(String[] args) {
+	int[] Arr = new int[3];
+	Arr[0] =1;
+	Arr[1] =2;
+	Arr[2] =3;
+		
+    //향상된 For문
+	for(int j : Arr) {
+		System.out.println(j);
+	}
+}
+```
+
+for ~ each 문은 <향상된 for 문>이라고 불리는 구문으로 자바 5버전부터 추가된 구문입니다. 구문 자체는 배열의 항목수만큼 배열의 항목을 꺼내어 실행한다.
+
+```
+enum Face{ ONE, TWO, THREE, FOUR, FIVE, SIX};
+    
+public static void main(String[] args) {
+    Collection<Face> faces = Arrays.asList(Face.values());
+        
+    for(Iterator<Face> i = faces.iterator(); i.hasNext();) {
+        for(Iterator<Face> j = faces.iterator(); j.hasNext();) {
+            System.out.println(i.next() + " " + j.next());
+        }
+    }
+}
+```
+
+위에 소스는 중첩되는 순환문을 통해 주사위 모든 조합을 출력하기 위한 소스이다. 하지만.. 결괏값을 보면
+
+의도한 바와는 다른 결괏값을 출력함을 알 수 있다.
+
+```
+enum Face{ ONE, TWO, THREE, FOUR, FIVE, SIX};
+
+public static void main(String[] args) {
+    Collection<Face> faces = Arrays.asList(Face.values());
+        
+        for(Face face1 : faces) {
+            for(Face face2 : faces)
+            System.out.println(face1 + "," + face2);
+        }
+    }
+​```
+
+이럴 경우 이렇게 향상된 for 문을 써서 해당 값을 나타낼 수 있다.
