@@ -127,13 +127,14 @@ public static void main(String[] args) {
             System.out.println(face1 + "," + face2);
         }
     }
-​```
+```
 
 이럴 경우 이렇게 향상된 for 문을 써서 해당 값을 나타낼 수 있다.
 
 ### while
 
 지정된 조건이 true인 경우에 계속 반복적으로 실행하기를 원할때 자주 사용된다.
+
 
 ```
 int num=1
@@ -142,3 +143,19 @@ while(true){
 	if(num==100) break;
 }
 ```
+
+### do while
+
+do while은 while문의 방식을 살짝 수정해서 사용할 수 있는 키워드이다.
+
+명령문이 최소 1번 실행된 후에, while문 뒤에 있는 표현식을 확인하여 반복여부를 결정한다.
+
+```
+int count = 0;
+		
+do {			
+	System.out.println("횟수 : " + count);		
+} while (count != 0);
+```
+
+횟수 : 0
