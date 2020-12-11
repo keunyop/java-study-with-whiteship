@@ -130,3 +130,15 @@ public static void main(String[] args) {
 ​```
 
 이럴 경우 이렇게 향상된 for 문을 써서 해당 값을 나타낼 수 있다.
+
+### while
+
+지정된 조건이 true인 경우에 계속 반복적으로 실행하기를 원할때 자주 사용된다.
+
+```
+int num=1
+while(true){
+	num++;
+	if(num==100) break;
+}
+```
