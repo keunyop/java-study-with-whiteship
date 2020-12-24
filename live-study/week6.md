@@ -61,3 +61,35 @@ public class SampleTest {
 
 > Super: Product Type, This: Book Type
 
+
+### ■ 메소드 오버라이딩
+
+조상 클래스로부터 상속받은 메서드의 내용을 변경하는 것.
+
+어떤 메서드를 사용할 때 상속받은 메서드를 그대로 사용할 수도 있지만, 자손 클래스에 맞게 변경해야 하는 경우엔 조상의 메서드를 오버라이딩한다.
+
+```
+public class Graph {
+    int x;
+    int y;
+
+    String getLocation() {
+        return "x : " + x + "y : " + y;
+    }
+}
+
+public class Graph3D extends Graph {
+    int z;
+
+    @Override
+    String getLocation() {
+        return "x : " + x + "y : " + y + "z : " + z;
+    }
+}
+```
+
+#### 오버 라이딩의 조건
+
+- 선언부가 조상 클래스의 메서드와 일치해야 한다.
+- 접근 제어자를 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.
+- 예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.
