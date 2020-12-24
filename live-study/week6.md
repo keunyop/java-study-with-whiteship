@@ -34,7 +34,7 @@ super 키워드는 자식 클래스에서 부모 클래스의 자원을 참조�
 
 부모 클래스의 자원도 this 키워드를 사용해 참조할 수 있고, 자식 클래스의 자원과 부모 클래스의 자원을 구별해서 사용해야 할 때 super 키워드를 사용한다.
 
-```
+```java
 class Product {
     String productCode;
     String type = "Product Type";
@@ -68,7 +68,7 @@ public class SampleTest {
 
 어떤 메서드를 사용할 때 상속받은 메서드를 그대로 사용할 수도 있지만, 자손 클래스에 맞게 변경해야 하는 경우엔 조상의 메서드를 오버라이딩한다.
 
-```
+```java
 public class Graph {
     int x;
     int y;
@@ -93,3 +93,58 @@ public class Graph3D extends Graph {
 - 선언부가 조상 클래스의 메서드와 일치해야 한다.
 - 접근 제어자를 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.
 - 예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.
+
+### ■ 다이나믹 메소드 디스패치 (Dynamic Method Dispatch)
+
+- 오버라이딩 된 메소드들이 있는 경우 어떤 것을 호출할지를 런타임에서 결정하는 것
+- 해당 메소드 참조에 의해 호출될 때, 객체 유형에 따라서 실행할 메소드를 결정
+- 자바는 묵시적으로 메소드를 호출할 객체를 인자로 넘기기 때문에 메소드 내부에서 호출 객체를 참조할 수 있다. → 런타임에서 호출하는 객체도 결정된다.
+
+- 자바는 묵시적으로 메소드를 호출할 객체를 인자로 넘기기 때문에 메소드 내부에서 호출 객체를 참조할 수 있다. → 런타임에서 호출하는 객체도 결정된다.
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        A a = new C();
+        a.print();
+    }
+}
+
+class A {
+    public A() {
+        System.out.println("부모 클래스 호출!");
+    }
+
+    public void print() {
+        System.out.println("부모 클래스 print() 호출!");
+    }
+}
+
+class B extends A {
+    public B() {
+        System.out.println("B 클래스 호출!");
+    }
+
+    @Override
+    public void print() {
+        System.out.println("B 클래스 print() 호출!");
+    }
+}
+
+class C extends A {
+    public C() {
+        System.out.println("C 클래스 호출!");
+    }
+
+    @Override
+    public void print() {
+        System.out.println("C 클래스 print() 호출!");
+    }
+}
+
+/* 출력 결과
+부모 클래스 호출!
+C 클래스 호출!
+C 클래스 print() 호출!
+*/
+```
