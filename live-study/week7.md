@@ -27,6 +27,23 @@
 
 ### ■ import 키워드
 
+#### import 패키지명.클래스이름
+
+import 문이 작성되는 위치는 패키지 선언가 클래스 선언의 사이이다.
+만약 그 패키지안에 있는 모든 클래스를 한거번에 import 해서 사용하고 싶다면 ' * ' 를 사용하도록 하자 .
+
+```java
+package org.example; //패키지 선언
+
+import org.example.test2.Apple; // import 선언 Apple 클래스 사용
+import org.example.test2.*; // import 선언 test2 안에 있는 모든 클래스 사용
+
+public class App // 클래스 선언
+{
+    Apple apple = new Apple();
+}
+```
+
 ### ■ 클래스패스
 
 ### ■ CLASSPATH 환경변수
