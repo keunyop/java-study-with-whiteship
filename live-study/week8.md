@@ -46,6 +46,31 @@ public interface Car {
 
 ### ■ 인터페이스 구현하는 방법
 
+인터페이스는 implements 키워드를 이용해서 클래스를 선언하고 클래스에 실제 메서드의 처리를 정의한다.
+
+```java
+public class Bar implements Foo {
+    @Override
+    public String say() {
+       System.out.println("Bar");                
+    }                                      
+}
+```
+
+인터페이스에는 메서드뿐만아니라 상수(public static final 필드)를 정의하는 것도 가능하다.
+또한 public static final도 생략이 가능하다.
+
+```java
+interface Foo{
+   int number = 10;
+}
+```
+
+- 인터페이스는 반드시 public 이므로 생략 가능하다.
+
+- 모든 메서드는 public abstract 이어야 하며, 이를 생략할 수 있다.(static, default 메서드는 예외, JDK 1.8~)
+- 모든 멤버변수는 public static final 이어야 하며, 이를 생략할 수 있다.
+
 ### ■ 인터페이스 레퍼런스를 통해 구현체를 사용하는 방법
 
 ### ■ 인터페이스 상속
