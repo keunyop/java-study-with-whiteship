@@ -168,4 +168,45 @@ interface에서 업무를 구현할 수 있는 method
 
 ### ■ 인터페이스의 static 메소드, 자바 8
 
+구현하는 클래스에서 구현하지 않더라도 사용할 수 있도록 인터페이스에서 미리 구현하는 메소드이다.
+
+- 현 클래스의 인스턴스를 생성하지 않더라도 사용할 수 있다.
+
+- 구현 클래스 또는 하위 인터페이스에 상속되지 않는다.
+- 상속되지 않기 때문에 구현 클래스에서 재정의 할 수 없다.
+
+```java
+public interface MyInterface {
+    void show(String string);
+    void sum(int num1, int num2);
+
+    static void staticMethod() {
+        System.out.println("static method");
+    }
+}
+
+class MyClassTest {
+    @Test
+    public void test() {
+        //인스턴스를 생성하지 않아도 바로 호출할 수 있다.
+        MyInterface.defaultMethod();
+    }
+}
+```
+
+
 ### ■ 인터페이스의 private 메소드, 자바 9
+
+Java8 부터 default 및 static 메소드의 도입으로 인터페이스는 갑자기 메소드 이름(method signatures) 뿐만 아니라 구현을 포함 할 수 있게 되었다. 
+
+일반적으로 이러한 메소드는 구현 세부 사항이며 외부에서 볼 수 없고 사용할 수 없으므로 주로 private 메소드를 사용한다.
+
+Java9 부터는 인터페이스에서 private methods를 사용할 수 있게 되었다.
+
+인터페이스에서 사용하는 private methods 는 다음과 같은 특성을 가지고 있다.
+
+- 메소드 body가 있고 abstract가 아니다.
+
+- static 이거나 non-static 일 수 있다.
+- 구현 클래스와 인터페이스가 상속되지 않는다.
+- 인터페이스에서 다른 메소드를 호출할 수 있다.
