@@ -153,6 +153,19 @@ public class InheritanceExam implements B{
 
 ### ■ 인터페이스의 기본 메소드 (Default Method), 자바 8
 
+interface에서 업무를 구현할 수 있는 method
+
+- JDK 1.7에서부터 interface에 업무를 구현할 수 있는 defalut method 추가
+
+- 구현하게 되면 추상클래스와 큰 차이가 없어지게 된다.
+- 사용은 객체를 생성한 후에 사용(is-a관계에서)
+
+```java
+접근지정자 default 반환형 method명(매개변수,,) {
+            
+}
+```
+
 ### ■ 인터페이스의 static 메소드, 자바 8
 
 ### ■ 인터페이스의 private 메소드, 자바 9
