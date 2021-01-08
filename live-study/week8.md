@@ -5,6 +5,7 @@
 자바의 인터페이스에 대해 학습하세요.
 
 ## 학습할 것
+
 - 인터페이스 정의하는 방법
 
 - 인터페이스 구현하는 방법
@@ -20,7 +21,7 @@
 
 class 키워드 대신 interface를 사용하여 작성한다.
 
-접근제어자는 public과 default가 가능하다. 
+접근제어자는 public과 default가 가능하다.
 
 ```java
 public interface Car {
@@ -39,10 +40,9 @@ public interface Car {
 - 다른 인터페이스에 상속될 수 있고 다중 상속을 허용한다.
 - 인터페이스는 래퍼런스 변수로 사용이 가능하다. ex) Car car; // O
 
-하지만 Java8부터는 default method를 정의할 수 있다. 이로 인하여 추상 클래스의 경계가 모호해졌다.  
+하지만 Java8부터는 default method를 정의할 수 있다. 이로 인하여 추상 클래스의 경계가 모호해졌다.
 
 인터페이스안에 인터페이스나 클래스를 중첩하여 사용 할 수 있다. 인터페이스 내부에 선언된 인터페이스나 클래스는 public static으로 간주된다.
-
 
 ### ■ 인터페이스 구현하는 방법
 
@@ -52,8 +52,8 @@ public interface Car {
 public class Bar implements Foo {
     @Override
     public String say() {
-       System.out.println("Bar");                
-    }                                      
+       System.out.println("Bar");
+    }
 }
 ```
 
@@ -108,10 +108,51 @@ public class ReferenceImplements {
 
 ### ■ 인터페이스 상속
 
+인터페이스 상속이란, 자식 클래스가 부모 클래스를 상속받는 것과 비슷하게 작동한다.
+
+클래스와 마찬가지로 extends 예약어를 사용한다
+
+부모 인터페이스에 선언된 추상 메소드를 자식 인터페이스에서 상속받은 뒤, 새로운 추상 메소드나 상수를 추가한다.
+
+```java
+public interface A {
+    int LENGTH = 10;
+
+    public void speak();
+}
+
+public interface B extends A{
+    @Override
+    void speak();
+
+    void run();
+     int LENGTH = 20;
+
+}
+
+public class InheritanceExam implements B{
+    @Override
+    public void speak() {
+        System.out.println("Hello!!");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("running!!!!");
+    }
+
+    public static void main(String[] args) {
+        A a = new InheritanceExam();
+        B b = new InheritanceExam();
+
+        System.out.println(a.LENGTH);
+        System.out.println(b.LENGTH);
+    }
+}
+```
+
 ### ■ 인터페이스의 기본 메소드 (Default Method), 자바 8
 
 ### ■ 인터페이스의 static 메소드, 자바 8
 
 ### ■ 인터페이스의 private 메소드, 자바 9
-
-
