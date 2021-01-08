@@ -73,6 +73,39 @@ interface Foo{
 
 ### ■ 인터페이스 레퍼런스를 통해 구현체를 사용하는 방법
 
+- 인터페이스는 다형성을 이용해 구현할 수 있다.
+
+- 자식 클래스의 인스턴스를 부모 클래스에 참조변수로 참조하는 것이 가능하다.
+
+```java
+interface Shape{
+    void draw();
+}
+
+class Square implements Shape{
+    @Override
+    public void draw() {
+        System.out.println("This is a square.");
+    }
+}
+
+class Circle implements Shape{
+    @Override
+    public void draw() {
+        System.out.println("This is a circle.");
+    }
+}
+public class ReferenceImplements {
+    public static void main(String[] args) {
+        Shape shape1=new Square();
+        Shape shape2=new Circle();
+
+        shape1.draw();
+        shape2.draw();
+    }
+}
+```
+
 ### ■ 인터페이스 상속
 
 ### ■ 인터페이스의 기본 메소드 (Default Method), 자바 8
