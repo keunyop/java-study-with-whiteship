@@ -128,3 +128,34 @@ try (InputStream is = new FileInputStream(file)) {
     //예외 발생 시, 예외에 대한 처리
 }
 ```
+
+
+### ■ 자바가 제공하는 예외 계층 구조
+
+- 최상위는 Object 클래스이다.
+
+- 에러클래스와 예외클래스는 Throwable 클래스 에서 상속받는다.
+
+### ■ Exception과 Error의 차이는?
+
+Error는 시스템에서 발생하는 문제이고 Exception은 구현한 로직에서 발생하는 문제이다.
+
+컴파일 시점에 발생하는 에러를 컴파일 에러라고하고 런타임 시점에 발생하는 에러를 런타임 에러라고 한다.
+
+런타임 시점에서 발생하는 에러 중 시스템 레벨에서 발생한 에러가 아닌 로직 내에서 발생한 에러, 즉 처리 가능한 에러를 예외라고 한다.
+
+### ■ RuntimeException과 RE가 아닌 것의 차이는?
+
+RuntimeException은 UncheckedException에 속한다. 오로지 개발자의 경험에 의해서 예외 처리 코드를 작성해야 된다. 그럼으로써 실행 예외를 잘 익혀두어야 된다. 
+
+Exception(일반예외)과 RuntimeException(실행예외) 클래스를 구별하는 방법은 일반 예외는 Exception을 상속 받고 실행 예외는 RuntimeException을 상속받는다. RuntimeException도 Exception을 상속받지만 JVM은 RuntimeException을 상속했는지 여부를 보고 실행 예외를 판단한다. 
+
+### ■ 커스텀한 예외 만드는 방법
+
+```java
+public class CustomException extends Exception{
+    CustomException(String msg){
+        super(msg);
+    }
+}
+```
