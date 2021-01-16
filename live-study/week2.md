@@ -27,3 +27,5 @@ double  8   bytes   0.0d
 boolean 1   bit	    false
 char    2   bytes   '\u0000'
 ```
+
+### ■ 프리미티브 타입과 레퍼런스 타입
