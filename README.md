@@ -1,1 +1,1 @@
-# 자바 기초 스터디 with Whiteship
+# 자바 스터디 with Whiteship
