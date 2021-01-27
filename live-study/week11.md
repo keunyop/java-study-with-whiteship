@@ -11,3 +11,20 @@
 - enum이 제공하는 메소드 (values()와 valueOf())
 - java.lang.Enum
 - EnumSet
+
+---
+
+### ■ enum 정의하는 방법
+
+```java
+public enum Day {
+  MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+```
+
+
+### ■ enum이 제공하는 메소드 (values()와 valueOf())
+
+### ■ java.lang.Enum
+
+### ■ EnumSet
