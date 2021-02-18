@@ -31,6 +31,23 @@ NIO에서는 채널을 통해 데이터를 읽고 쓴다.
 
 ### ■ InputStream과 OutputStream
 
+두 클래스는 Byte Stream의 입력과 출력을 담당하는 클래스이다.
+
+##### InputStream의 경우 ByteArrayInputStream을 구현체로 사용하였다.
+
+- read()
+- read(byte[] b)
+- read(byte[] b, int off, int len)Permalink
+- close()
+
+##### OutputStream의 경우, FileOutputStream을 구현체로 사용하였다.
+
+- write(int b)
+- write(byte[] b)
+- write(byte[] b, int off, int len)
+- flush()
+- close()
+
 ### ■ Byte와 Character 스트림
 
 ### ■ 표준 스트림 (System.in, System.out, System.err)
