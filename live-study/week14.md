@@ -49,6 +49,30 @@ class Person<T> {
 
 ### ■ 제네릭 주요 개념 (바운디드 타입, 와일드 카드)
 
+#### 와일드 카드
+
+- 와일드카드란 카드 게임에서 유래된 용어로 카드 플레이어가 자기 맘대로 사용할 수 있는 만능 카드를 의미한다. 컴퓨터 용어에서는 이보다 좀 더 확장된 개념으로 사용하는데 주로 패턴을 정의할 때 많이 사용하며 ‘전체’ 의 의미로 쓰이거나 특정 문자에 따라 조건이 지정된다는 뜻으로 쓰인다.
+
+- 주로 잘 알려진 와일드카드는 ‘?’ 와 ‘*’ 인데 제네릭에서는 ‘?’ 만 와일드카드로 사용할 수 있다.
+
+#### 바운디드 타입
+
+- 와일드카드에서 특정 타입으로 제한하는 것을 바운드 타입 파라미터라고 한다.
+
+```java
+public class GenericBoundExample<T extends Vehicle> {
+    private T vehicleType;
+    
+    public void setVehicleType(T vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+    
+    public T getVehicleType() {
+        return vehicleType;
+    }
+}
+```
+
 ### ■ 제네릭 메소드 만들기
 
 ### ■ Erasure
