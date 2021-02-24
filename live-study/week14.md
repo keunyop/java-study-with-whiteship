@@ -75,4 +75,27 @@ public class GenericBoundExample<T extends Vehicle> {
 
 ### ■ 제네릭 메소드 만들기
 
+매개 타입과 리턴 타입으로 타입 파라미터를 갖는 메소드
+
+```java
+public class Util {
+
+    public static <K, V> GenericMap<K, V> createGenericMap(K[] keyArr, V[] valueArr) {
+        GenericMap<K, V> gMap = new GenericMap<>();
+        for (int i = 0; i < keyArr.length; i++) {
+            gMap.put(keyArr[i], valueArr[i]);
+        }
+        return gMap;
+    }
+
+    public static <K, V> boolean equalsHeadAndTail(GenericMap<K, V> gMap1, GenericMap<K, V> gMap2) {
+        boolean equalsKey = gMap1.getHead().getKey().equals(gMap2.getHead().getKey()) && gMap1.getTail().getKey().equals(gMap2.getTail().getKey());
+        boolean equalsValue = gMap1.getHead().getValue().equals(gMap2.getHead().getValue()) && gMap1.getTail().getValue().equals(gMap2.getTail().getValue());
+
+        return equalsKey && equalsValue;
+    }
+}
+```
+
+
 ### ■ Erasure
