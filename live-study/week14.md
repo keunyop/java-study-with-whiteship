@@ -98,4 +98,34 @@ public class Util {
 ```
 
 
-### ■ Erasure
+### ■ Erasure (소거)
+
+- 제네릭은 타입의 정보가 런타임에는 소거 된다.
+
+- 원소의 타입을 컴파일타임에만 검사하고 보증함으로써, 런타임에는 타입 정보를 알 수 조차 없게 한다.
+- 이를 실체화가 되지 않는다 라고 한다.
+- 이는 제네릭이 생기기 이전의 레거시코드가 호환될 수 있도록 한 조치이다.
+- 반면에 배열은 타입 정보를 런타임에도 가지고 있으며, 이를 실체화 된다고 한다. 
+
+```java
+public class Erasure<T> {
+    private List<T> list; 
+    
+    public void setList() { 
+        list = new ArrayList<>(); 
+    } 
+    
+    public <R> List<R> get(List<R> item) { 
+        if (item.equals(list))
+            return item; 
+        else 
+            return null; 
+    } 
+    
+    public static void main(String[] args) { 
+        Erasure<String> str = new Erasure<>(); 
+        str.setList(); 
+        str.get(new ArrayList<Integer>()); 
+    } 
+}
+```
